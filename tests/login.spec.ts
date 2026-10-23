@@ -4,6 +4,7 @@ import { users } from '../fixtures/test-data';
 test.describe('Login', () => {
   test.beforeEach(async ({ loginPage }) => {
     await loginPage.goto();
+
   });
 
   test('standard user can log in', async ({ loginPage, inventoryPage }) => {
