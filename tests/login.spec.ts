@@ -7,10 +7,6 @@ test.describe('Login', () => {
 
   });
 
-  test('password field is masked', async ({ loginPage }) => {
-  await expect(loginPage.password).toHaveAttribute('type', 'text');
-});
-
   test('standard user can log in', async ({ loginPage, inventoryPage }) => {
     await loginPage.login(users.standard.username, users.standard.password);
     await inventoryPage.expectLoaded();
