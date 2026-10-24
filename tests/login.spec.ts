@@ -21,6 +21,10 @@ test.describe('Login', () => {
     await loginPage.login(users.invalid.username, users.invalid.password);
     await loginPage.expectError(/do not match/i);
   });
+    test('invalid credentials show an error 2', async ({ loginPage }) => {
+    await loginPage.login(users.invalid.username, users.invalid.password);
+    await loginPage.expectError(/do not match/i);
+  });
 
   test('empty username shows a required error', async ({ loginPage }) => {
     await loginPage.password.fill(users.standard.password);
